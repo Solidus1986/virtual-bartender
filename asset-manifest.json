@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/poc-virtual-bartender/static/css/main.a1546039.chunk.css",
-    "main.js": "/poc-virtual-bartender/static/js/main.21abab0b.chunk.js",
-    "main.js.map": "/poc-virtual-bartender/static/js/main.21abab0b.chunk.js.map",
-    "runtime-main.js": "/poc-virtual-bartender/static/js/runtime-main.dddc8a54.js",
-    "runtime-main.js.map": "/poc-virtual-bartender/static/js/runtime-main.dddc8a54.js.map",
-    "static/js/2.36e9e09c.chunk.js": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js",
-    "static/js/2.36e9e09c.chunk.js.map": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js.map",
-    "index.html": "/poc-virtual-bartender/index.html",
-    "static/css/main.a1546039.chunk.css.map": "/poc-virtual-bartender/static/css/main.a1546039.chunk.css.map",
-    "static/js/2.36e9e09c.chunk.js.LICENSE.txt": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/poc-virtual-bartender/static/media/fond-cocktail.5a9ae176.png"
+    "main.css": "/virtual-bartender/static/css/main.aa7f0001.chunk.css",
+    "main.js": "/virtual-bartender/static/js/main.21abab0b.chunk.js",
+    "main.js.map": "/virtual-bartender/static/js/main.21abab0b.chunk.js.map",
+    "runtime-main.js": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js",
+    "runtime-main.js.map": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js.map",
+    "static/js/2.36e9e09c.chunk.js": "/virtual-bartender/static/js/2.36e9e09c.chunk.js",
+    "static/js/2.36e9e09c.chunk.js.map": "/virtual-bartender/static/js/2.36e9e09c.chunk.js.map",
+    "index.html": "/virtual-bartender/index.html",
+    "static/css/main.aa7f0001.chunk.css.map": "/virtual-bartender/static/css/main.aa7f0001.chunk.css.map",
+    "static/js/2.36e9e09c.chunk.js.LICENSE.txt": "/virtual-bartender/static/js/2.36e9e09c.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/virtual-bartender/static/media/fond-cocktail.5a9ae176.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.dddc8a54.js",
+    "static/js/runtime-main.ce1c7f13.js",
     "static/js/2.36e9e09c.chunk.js",
-    "static/css/main.a1546039.chunk.css",
+    "static/css/main.aa7f0001.chunk.css",
     "static/js/main.21abab0b.chunk.js"
   ]
 }
