@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/poc-virtual-bartender/static/css/main.a1546039.chunk.css",
+    "main.js": "/poc-virtual-bartender/static/js/main.21abab0b.chunk.js",
+    "main.js.map": "/poc-virtual-bartender/static/js/main.21abab0b.chunk.js.map",
+    "runtime-main.js": "/poc-virtual-bartender/static/js/runtime-main.dddc8a54.js",
+    "runtime-main.js.map": "/poc-virtual-bartender/static/js/runtime-main.dddc8a54.js.map",
+    "static/js/2.36e9e09c.chunk.js": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js",
+    "static/js/2.36e9e09c.chunk.js.map": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js.map",
+    "index.html": "/poc-virtual-bartender/index.html",
+    "static/css/main.a1546039.chunk.css.map": "/poc-virtual-bartender/static/css/main.a1546039.chunk.css.map",
+    "static/js/2.36e9e09c.chunk.js.LICENSE.txt": "/poc-virtual-bartender/static/js/2.36e9e09c.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/poc-virtual-bartender/static/media/fond-cocktail.5a9ae176.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dddc8a54.js",
+    "static/js/2.36e9e09c.chunk.js",
+    "static/css/main.a1546039.chunk.css",
+    "static/js/main.21abab0b.chunk.js"
+  ]
+}
