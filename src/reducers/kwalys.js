@@ -14,13 +14,12 @@ import {
   const initialState = {
     messagesChat: [],
     messages: [],
-    
   };
   
   // Switch statement - update state
   export default (state = initialState, action) => {
     const { type, payload } = action;
-    let { messagesChat, messages, session } = state;
+    let { messagesChat, messages } = state;
 
     switch (type) {
       case RESPONSE_USER_SUCCESS:

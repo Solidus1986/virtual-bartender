@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="214px" viewBox="0 0 375 214" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8B4CB966-9D4C-4086-BC95-195FEE6C7E73</title>
+    <defs>
+        <path d="M56.91,608.9997 C69.417,608.9997 80.446,615.315645 87.001,624.932116 C89.127,628.05148 92.606,630.001701 96.408,630.001701 L96.408,630.001701 L107.219,630.0017 L107.22,630 L375,630 L375,812 L113.819,811.9997 L113.819,812.4997 L0,812.4997 L0,630.001701 L17.412,630.001701 C21.214,630.001701 24.692,628.05148 26.818,624.932116 C33.373,615.315645 44.403,608.9997 56.91,608.9997 Z" id="path-1"></path>
+        <filter x="-4.1%" y="-8.1%" width="108.3%" height="115.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.130681818 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="BOAT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Combined-Shape" transform="translate(0.000000, -598.000000)">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#201717" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

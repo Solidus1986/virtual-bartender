@@ -27,8 +27,8 @@ import {
 
   export const createSession = () => async (dispatch) => {
     try {
-      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/BOT_HENNESSY/api/web");
-      dispatch({ type: SESSION_SUCCESS, payload: res.data.session });
+      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/Demo_hennessy/api/web");
+      dispatch({ type: SESSION_SUCCESS, payload: res.data.session }, console.log(res.data.session, "num de session") );
     } catch (err) {
       dispatch({ type: SESSION_FAIL });
     }
@@ -38,7 +38,7 @@ import {
 
   export const botMessage = () => async (dispatch) => {
     try {
-      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/BOT_HENNESSY/api/web");
+      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/Demo_hennessy/api/web");
       dispatch({ type: RESPONSE_BOT_SUCCESS, payload: res.data.data});
     } catch (err) {
       dispatch({ type:  RESPONSE_BOT_FAIL});
@@ -48,8 +48,7 @@ import {
   //  Sends the message to the bot - API CALL
   export const sendMessage = (resData) => async (dispatch) => {
     try {
-       ;
-      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/BOT_HENNESSY/api/web", resData);
+      const res = await axios.post("http://app.ivy.kwalys.com:8080/Wideagency/bots/Demo_hennessy/api/web", resData);
       dispatch({
         type: MESSAGE_SUCCESS,
         payload: res.data.data,

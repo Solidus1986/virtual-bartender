@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
 //  Import action
-import { userMessage, botMessage, sendMessage} from '../../actions/kwalys';
+import { userMessage, botMessage, sendMessage, cre} from '../../actions/kwalys';
+import Messages from "./Messages";
+import Responses from "./Responses";
 
 const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage}) => {  
 
@@ -33,11 +35,12 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
     }
 
     const clearSession = () => {
-        localStorage.clear()
+        localStorage.clear(token)
     }
     // Function toggle chat
     const toggleBartender = () => {
         setToggle(!toggle)
+
     }
     const closeChatbot = () => {
         setBartender(!bartender);
@@ -50,8 +53,7 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
         setBartender(!bartender);
         setChatbot(!chatBot);
     }
-    console.log(chat)
-    console.log(botMessages)
+    console.log(botMessages, "le chat")
 
 
     
@@ -62,82 +64,57 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
       });
     }
   }, [botMessages]);
-   
     return (
-        <div className="chat">
-            
+        <div className="chatbot">
             {/* Handle Messages */}
             {chatBot ?  
-                <> 
-                <div className="chat-header">
-                    <div className="close" onClick={closeChatbot}>X</div>
-                </div>       
-                <div className="historyContainer" >
-                    <div className="chatBotUser" >     
-                    {botMessages.map((mess) => ( 
-                        <>
-                        <div className="chat-messages">       
-                        {mess.message.messages.map((bot)=> (
-                            <div className="mess" type={bot.type}>
-                                {bot.type ==="slideshow" ? 
-                                    <img src={bot.content}/>
-                                    : <p>{bot.content}</p>
-                                }
-                            </div>
-                            
-                        ))}
+                <div className="chat"> 
+                    <div className="chat-header">
+                        <div className="close" onClick={closeChatbot}>X</div>
+                    </div>       
+                    <div className="historyContainer" >
+                        <div className="chatBotUser" >     
+                            {botMessages.map((mess) => ( 
+                            <>
+                                <Messages dataMessages={mess.message.messages}/>
+                                <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
+                            </> 
+                            ))}
+                            <div className="scrollbar" ref={endOfMessages} ></div>
                         </div>
-                        <div className="chat-responses">
-                        {mess.message.responses.map((user)=>(
-                            <input 
-                                className="bot-responses" 
-                                type="submit" 
-                                key={user.id} 
-                                onClick={handleSubmit} 
-                                value={user.content} 
-                                name={user.tracking} />
-                        ))}
-                        </div>
-                    </> 
-                    ))}
-                   {/* Input Box */}
-                    {/* <input
-                        id="chatBox"
-                        onChange={(e) => setMessage(e.target.value)}
-                        onClick={handleClick}
-                        value={message}
-                    ></input> */}
-                    <div className="scrollbar" ref={endOfMessages} ></div>
+                    </div>
+                </div> 
+            : ""}
+            {bartender ?
+            <div onClick={toggleBartender}>
+                <div className="bartender" >
+                    <div className="logo-left"></div>
+                    <button className="logo"  onClick={openChatBot} />
+                    <div className="logo-left"></div>
+                    <div>
+                    <p className="bartender-title">VIRTUAL BARTENDER</p>
+                    {/* {!toggle ? <p className="bartender-title">VIRTUAL BARTENDER</p> 
+                        :
+                        <div className="go" >^</div>
+                    } */}
                     </div>
                 </div>
-                </> 
-            : ""}
-        
-        {bartender ?
-        <div onClick={toggleBartender}>
-            <div className="bartender" >
-                <button className="logo" />
-                <div>
-                {!toggle ? <p className="bartender-title">VIRTUAL BARTENDER</p> 
-                    :
-                    <div className="go" onClick={openChatBot}>^</div>
-                }
-                </div>
-            </div>
-            <div> 
-                {toggle ? 
-                    <p className="bartender-message">
-                    Hi!
-                    <br />
-                    I am Hennessy virtual bartender.
-                    <br />
-                    Let me guide you to find your perfect cocktail match!
-                </p> : ""
-                }   
-                
-            </div>
+                {/* <div> 
+                    {toggle ? 
+                        <p className="bartender-message">
+                        Hi!
+                        <br />
+                        I am Hennessy virtual bartender.
+                        <br />
+                        Let me guide you to find your perfect cocktail match!
+                    </p> : ""
+                    }   
+                    
+                </div> */}
             </div> : ""}
+      
         </div>
+          
     )
 }
 

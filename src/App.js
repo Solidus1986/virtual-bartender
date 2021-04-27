@@ -2,6 +2,7 @@
 import {useEffect} from 'react'
 import './App.css';
 import axios from 'axios';
+import iphone from "./assets/img/iphone-x.png"
 
 // Import redux component
 import { Provider } from 'react-redux';
@@ -15,10 +16,12 @@ import { createSession } from './actions/kwalys'
 
 
 if (localStorage.session) {
-  axios.defaults.headers.common["session"] = localStorage.session;
+  delete axios.defaults.headers.common.session;
+  axios.defaults.headers.common.session = localStorage.session;
 } else {
-  delete axios.defaults.headers.common["session"];
+  delete axios.defaults.headers.common.session;
 }
+
 
 // Connect application to redux
 const App = () => {
@@ -27,7 +30,7 @@ const App = () => {
     if(!localStorage.session) {
       //Create
       store.dispatch(createSession())
-      console.log(localStorage.session, "session")
+      
     }
   })
 
@@ -35,9 +38,11 @@ const App = () => {
 
   return (
     <Provider store={store} >
+ 
       <div className="App">
         <Chat />
       </div>
+      
     </Provider>
   );
 }
