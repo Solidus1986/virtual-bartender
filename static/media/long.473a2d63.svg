@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="97px" viewBox="0 0 46 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>0F87D33C-180B-4A89-959F-01F5BDCDFC26</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="BOAT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="HENNESSY-CHATBOT-ECRAN4" transform="translate(-220.000000, -441.000000)">
+            <g id="Group-2" transform="translate(110.000000, 442.000000)">
+                <g id="Group-13" transform="translate(111.000000, 0.000000)" filter="url(#filter-1)">
+                    <g>
+                        <path d="M43.429,25.7787 L44,88.5787 C43.331,92.2127 40.202,94.8867 36.491,94.9997 L7.511,94.9997 C3.799,94.8847 0.672,92.2107 0,88.5787 L0.572,25.7787 L43.429,25.7787 Z" id="Stroke-1" stroke="#4D4D4D" stroke-width="2"></path>
+                        <line x1="0.5715" y1="25.7787" x2="43.4285" y2="25.7787" id="Stroke-3" stroke="#4D4D4D" stroke-width="2"></line>
+                        <line x1="1" y1="42" x2="43" y2="42" id="Stroke-5" stroke="#4D4D4D" stroke-width="2"></line>
+                        <path d="M36.2864,17.0507 C39.4414,17.0507 42.0004,14.5057 42.0004,11.3667 C42.0004,8.2277 39.4414,5.6837 36.2864,5.6837 C33.1304,5.6837 30.5714,8.2277 30.5714,11.3667 C30.5714,14.5057 33.1304,17.0507 36.2864,17.0507 Z" id="Stroke-7" stroke="#4D4D4D" stroke-width="2"></path>
+                        <line x1="36.9631" y1="5.723" x2="37.7141" y2="0" id="Stroke-9" stroke="#4D4D4D" stroke-width="2"></line>
+                        <line x1="25.2561" y1="94.9994" x2="35.4851" y2="16.9904" id="Stroke-11" stroke="#4D4D4D" stroke-width="2"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
