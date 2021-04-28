@@ -27,6 +27,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  margin-top: 3em;
   box-shadow:10px 10px 10px 12px #555;
 }
 
@@ -83,6 +84,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   z-index: 2;
+  margin-bottom: 2em;
 }
 .close {
   float: right;
@@ -144,6 +146,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  overflow-x: scroll;
 }
 
 .bartender {
@@ -196,14 +199,14 @@ body {
   border: none;
   outline: 0;
   cursor: pointer;
-  /* animation: 1s buttonAnime infinite reverse; */
+  animation: 1s buttonAnime infinite reverse;
   
 }
 
 @keyframes buttonAnime {
-  from{background-image: url('./assets/img/picto-fond-noir-animation-gauche.png');}
-  to {background-image: url('./assets/img/picto-fond-noir-animation-droite.png');}
-  /* 100% { background-image: url('./assets/img/picto-fond-noir-animation-gauche.png');} */
+  0%{background-image: url('./assets/img/picto-fond-noir-animation-gauche.png');}
+  50% {background-image: url('./assets/img/picto-fond-noir-animation-droite.png');}
+  100% { background-image: url('./assets/img/picto-fond-noir-animation-gauche.png');}
 }
 
 .bartender-title {

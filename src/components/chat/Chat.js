@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
-
+import { useSpring, animated } from 'react-spring';
 //  Import action
 import { userMessage, botMessage, sendMessage, cre} from '../../actions/kwalys';
 import Messages from "./Messages";
@@ -64,11 +64,13 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
       });
     }
   }, [botMessages]);
+
+  const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 100 });
     return (
         <div className="chatbot">
             {/* Handle Messages */}
             {chatBot ?  
-                <div className="chat"> 
+                <animated.div  style={animation} className="chat"> 
                     <div className="chat-header">
                         <div className="close" onClick={closeChatbot}>X</div>
                     </div>       
@@ -83,7 +85,7 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
                             <div className="scrollbar" ref={endOfMessages} ></div>
                         </div>
                     </div>
-                </div> 
+                </animated.div> 
             : ""}
             {bartender ?
             <div onClick={toggleBartender}>
