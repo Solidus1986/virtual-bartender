@@ -14,9 +14,9 @@ import {
   import axios from "axios";
   
   //  Function that handles  users response
-  export const userMessage = (messages) => async (dispatch) => {
+  export const userMessage = (selectResponse) => async (dispatch) => {
     try {
-      dispatch({ type: RESPONSE_USER_SUCCESS, payload: messages });
+      dispatch({ type: RESPONSE_USER_SUCCESS, payload: selectResponse}, console.log(selectResponse, '??'));
     } catch (err) {
       dispatch({ type: RESPONSE_USER_FAIL });
     }

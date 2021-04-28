@@ -14,6 +14,7 @@ import {
   const initialState = {
     messagesChat: [],
     messages: [],
+    
   };
   
   // Switch statement - update state
@@ -23,7 +24,7 @@ import {
 
     switch (type) {
       case RESPONSE_USER_SUCCESS:
-        // messagesChat = [...messagesChat, messages];
+        messages = [...messages, {selectResponse : payload}];
         return {
           ...state,
           messagesChat,
@@ -58,6 +59,7 @@ import {
         return {
           ...state,
           messages
+          
         };
       case MESSAGE_FAIL:
         return {

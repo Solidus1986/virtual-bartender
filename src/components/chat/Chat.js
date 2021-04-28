@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { useSpring, animated } from 'react-spring';
+
+
 //  Import action
-import { userMessage, botMessage, sendMessage, cre} from '../../actions/kwalys';
+import { userMessage, botMessage, sendMessage } from '../../actions/kwalys';
 import Messages from "./Messages";
 import Responses from "./Responses";
+import SelectResponse from "./SelectResponse";
 
 const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage}) => {  
 
@@ -15,13 +18,13 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
     const [toggle, setToggle] = useState(false);
     const [chatBot, setChatbot] = useState(false);
     const [bartender, setBartender] = useState(true);
-
+    const [selectResponse, setSelectResponse] = useState([])
     // Function handles user submission
-    const handleClick = async (e) => {
-        userMessage(message)
-        botMessage(message)
-        setMessage("")
-    } 
+    // const handleClick = async (e) => {
+    //     userMessage(message)
+    //     botMessage(message)
+    //     setMessage("")
+    // } 
     
     // Function handles response
     const handleSubmit = (e) => {
@@ -32,6 +35,17 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
             "text": e.target.value 
         }
         sendMessage(resData)
+        // const updateSelect = [...botMessages]
+        // updateSelect.push(resData);
+        // setSelectResponse(resData)
+        // userMessage(e.target.value)
+        // const selectRes = {
+        //     message : {
+        //         select : [resData]
+        //     } 
+        // }
+    
+        //  botMessages.push(selectRes)
     }
 
     const clearSession = () => {
@@ -64,26 +78,46 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
       });
     }
   }, [botMessages]);
-
-  const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 100 });
+  
+  const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 10 });
+  const animation1 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
+    const animation2 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
+    const animation3 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
     return (
         <div className="chatbot">
             {/* Handle Messages */}
             {chatBot ?  
                 <animated.div  style={animation} className="chat"> 
                     <div className="chat-header">
-                        <div className="close" onClick={closeChatbot}>X</div>
+                        <div className="close" onClick={closeChatbot}>&times;</div>
                     </div>       
                     <div className="historyContainer" >
+                        <div className="hello">
+                        <animated.p style={animation1}>Hello !</animated.p>
+                        <animated.p style={animation2}>I am Hennessy</animated.p>
+                        <animated.p style={animation3}>virtual bartender.</animated.p>
+                        </div>   
                         <div className="chatBotUser" >     
                             {botMessages.map((mess) => ( 
                             <>
-                                <Messages dataMessages={mess.message.messages}/>
-                                <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
+                                    <Messages dataMessages={mess.message.messages} />
+                                    <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
+                    
+                                <div className="scrollbar" ref={endOfMessages} ></div>
                             </> 
                             ))}
-                            <div className="scrollbar" ref={endOfMessages} ></div>
+                            {/* {selectResponse.map((select) => ( 
+                                <input 
+                                    className="bot-responses" 
+                                    type="submit"  
+                                    value={select.text} />
+                        ))} */}
                         </div>
+                        {/* <div>
+                        {botMessages.map((mess) => ( 
+                            <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
+                        ))}
+                        </div> */}
                     </div>
                 </animated.div> 
             : ""}
@@ -129,28 +163,3 @@ const mapStateToProps = (state) => ({
   export default connect(mapStateToProps, { userMessage, botMessage, sendMessage })(Chat);
   
 
-
-  /**
-   * <div className="chat-messages">
-                {botMessages.length === 0
-                    ? ""
-                    : botMessages.message.messages.map((botMessage) => (
-                    <div key={botMessage.type}>
-                            {botMessage.content}
-                            {console.log(botMessage.content)}
-                    </div>
-                ))}
-                </div>
-                <div className="chat-responses">
-                {botMessages.length === 0
-                    ? ""
-                    :botMessages.message.responses.map((botResponse) => (
-                    <> 
-                    {botResponse.content === "Sucré" ? <p>fruit</p> : ""}
-                    <input className="bot-responses" type="submit" key={botResponse.id} onClick={handleSubmit} value={botResponse.content} name={botResponse.tracking} />   
-                    </>    
-                ))}
-                </div>
-            </div>
-            : ""
-   */
