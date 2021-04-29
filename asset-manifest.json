@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/virtual-bartender/static/css/main.cd7bb5e2.chunk.css",
-    "main.js": "/virtual-bartender/static/js/main.29606f6c.chunk.js",
-    "main.js.map": "/virtual-bartender/static/js/main.29606f6c.chunk.js.map",
+    "main.js": "/virtual-bartender/static/js/main.b3d17010.chunk.js",
+    "main.js.map": "/virtual-bartender/static/js/main.b3d17010.chunk.js.map",
     "runtime-main.js": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js",
     "runtime-main.js.map": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js.map",
     "static/css/2.d6cc4a3f.chunk.css": "/virtual-bartender/static/css/2.d6cc4a3f.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.d6cc4a3f.chunk.css",
     "static/js/2.b2f6f91b.chunk.js",
     "static/css/main.cd7bb5e2.chunk.css",
-    "static/js/main.29606f6c.chunk.js"
+    "static/js/main.b3d17010.chunk.js"
   ]
 }
