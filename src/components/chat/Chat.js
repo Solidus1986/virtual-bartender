@@ -49,7 +49,7 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
     }
 
     const clearSession = () => {
-        localStorage.clear(token)
+        // localStorage.clear(token)
     }
     // Function toggle chat
     const toggleBartender = () => {
