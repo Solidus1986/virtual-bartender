@@ -15,8 +15,6 @@ import Chat from './components/chat/Chat';
 import { createSession } from './actions/kwalys'
 
 
-import phone from "./assets/img/iphone-x.png"
-
 if (localStorage.session) {
   delete axios.defaults.headers.common.session;
   axios.defaults.headers.common.session = localStorage.session;
@@ -27,6 +25,7 @@ if (localStorage.session) {
 
 // Connect application to redux
 const App = () => {
+
   useEffect(() => {
     // Check if there session
     if(!localStorage.session) {
@@ -36,16 +35,11 @@ const App = () => {
     }
   })
 
-
-
   return (
     <Provider store={store} >
-      {/* <img className="phone" src={phone} /> */}
       <div className="App">
-        <Chat />
-        
-      </div>
-      
+        <Chat /> 
+      </div> 
     </Provider>
   );
 }

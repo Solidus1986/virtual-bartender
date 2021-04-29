@@ -14,12 +14,6 @@ body {
   align-items: center;
 }
 
-/* .phone {
-  width: 890px;
-  position: absolute;
-  left: 625px;
-  top: 15px
-} */
 
 .App {
 
@@ -37,19 +31,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-
-/* .App::before {
-  content: "";
-  width: 405px;
-  height: 882px;
-  background-color: black;
-  position: absolute;
-  display: block;
-  z-index: -3;
-  top: -15px;
-  left: -15px;
-  border-radius: 1em;
-} */
 
 .chatbot {
   position: relative;

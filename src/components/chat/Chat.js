@@ -7,28 +7,21 @@ import { useSpring, animated } from 'react-spring';
 import { userMessage, botMessage, sendMessage } from '../../actions/kwalys';
 import Messages from "./Messages";
 import Responses from "./Responses";
-import SelectResponse from "./SelectResponse";
 
+// import asset
 import path from './../../assets/img/Path.svg'
 import path2 from './../../assets/img/path-2.svg'
 
-const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage}) => {  
+const Chat = ({ botMessages, token, botMessage, sendMessage}) => {  
 
-    // Handle Users message
-    const [message, setMessage] = useState("");
+    // scroll chat
     const endOfMessages = useRef(null);
+
     // Toggle chatbot
     const [toggle, setToggle] = useState(false);
     const [chatBot, setChatbot] = useState(false);
     const [bartender, setBartender] = useState(true);
     
-
-    // Function handles user submission
-    // const handleClick = async (e) => {
-    //     userMessage(message)
-    //     botMessage(message)
-    //     setMessage("")
-    // } 
     
     // Function handles response
     const handleSubmit = (e) => {
@@ -39,17 +32,6 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
             "text": e.target.value 
         }
         sendMessage(resData)
-        // const updateSelect = [...botMessages]
-        // updateSelect.push(resData);
-        // setSelectResponse(resData)
-        // userMessage(e.target.value)
-        // const selectRes = {
-        //     message : {
-        //         select : [resData]
-        //     } 
-        // }
-    
-        //  botMessages.push(selectRes)
     }
 
     const clearSession = () => {
@@ -60,12 +42,15 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
         setToggle(!toggle)
 
     }
+    // Function close chatbot
     const closeChatbot = () => {
         setBartender(!bartender);
         setChatbot(!chatBot);
         botMessages.splice(0, botMessages.length);
         clearSession()
     }
+
+     // Function Open chatbot
     const openChatBot = () => {
         botMessage();
         setBartender(!bartender);
@@ -73,20 +58,17 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
     }
     console.log(botMessages, "le chat")
 
+    useEffect(() => {
+        if (botMessages && endOfMessages.current) {
+            endOfMessages.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [botMessages]);
 
-    
-      useEffect(() => {
-    if (botMessages && endOfMessages.current) {
-      endOfMessages.current.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  }, [botMessages]);
-
-  const animation1 = useSpring({ opacity: chatBot ? 1 :0 , delay: 200 });
+    // animation open and hello
+    const animation1 = useSpring({ opacity: chatBot ? 1 :0 , delay: 200 });
     const animation2 = useSpring({ opacity: chatBot ? 1 :0 , delay: 600 });
     const animation3 = useSpring({ opacity: chatBot ? 1 :0 , delay: 1000 });
-  const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 10 });
+    const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 10 });
   
     return (
         <div className="chatbot">
@@ -104,59 +86,31 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
                         </div>   
                         <div className="chatBotUser" >     
                             {botMessages.map((mess) => ( 
-                            <>
+                                <>
                                     <Messages dataMessages={mess.message.messages} />
                                     <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
-                    
-                                <div className="scrollbar" ref={endOfMessages} ></div>
-                            </> 
+                                    <div className="scrollbar" ref={endOfMessages} ></div>
+                                </> 
                             ))}
-                            {/* {selectResponse.map((select) => ( 
-                                <input 
-                                    className="bot-responses" 
-                                    type="submit"  
-                                    value={select.text} />
-                        ))} */}
                         </div>
-                        {/* <div>
-                        {botMessages.map((mess) => ( 
-                            <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
-                        ))}
-                        </div> */}
                     </div>
                 </animated.div> 
             : ""}
             {bartender ?
-            <div onClick={toggleBartender}>
-                <div className="circle"/>
-                <div className="bartender" >
-                    <div className="logo-left"></div>
-                    <button className="logo"  onClick={openChatBot} />
-                    <div className="logo-left"></div>
-                    <div>
-                    <p className="bartender-title">VIRTUAL BARTENDER</p>
-                    {/* {!toggle ? <p className="bartender-title">VIRTUAL BARTENDER</p> 
-                        :
-                        <div className="go" >^</div>
-                    } */}
-                    <div className="close-2"><img src={path2}/></div>
+                <div onClick={toggleBartender}>
+                    <div className="circle"/>
+                        <div className="bartender" >
+                            <button className="logo"  onClick={openChatBot} />
+                            <div>
+                                <p className="bartender-title">VIRTUAL BARTENDER</p>
+                            <div className="close-2">
+                                <img src={path2}/>
+                            </div>
+                        </div>  
                     </div>
-                    
-                </div>
-                {/* <div> 
-                    {toggle ? 
-                        <p className="bartender-message">
-                        Hi!
-                        <br />
-                        I am Hennessy virtual bartender.
-                        <br />
-                        Let me guide you to find your perfect cocktail match!
-                    </p> : ""
-                    }   
-                    
-                </div> */}
-            </div> : ""}
-      
+                
+                </div> : ""
+            }
         </div>
           
     )
