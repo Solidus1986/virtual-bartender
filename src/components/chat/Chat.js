@@ -9,6 +9,9 @@ import Messages from "./Messages";
 import Responses from "./Responses";
 import SelectResponse from "./SelectResponse";
 
+import path from './../../assets/img/Path.svg'
+import path2 from './../../assets/img/path-2.svg'
+
 const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage}) => {  
 
     // Handle Users message
@@ -18,7 +21,8 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
     const [toggle, setToggle] = useState(false);
     const [chatBot, setChatbot] = useState(false);
     const [bartender, setBartender] = useState(true);
-    const [selectResponse, setSelectResponse] = useState([])
+    
+
     // Function handles user submission
     // const handleClick = async (e) => {
     //     userMessage(message)
@@ -78,18 +82,19 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
       });
     }
   }, [botMessages]);
-  
+
+  const animation1 = useSpring({ opacity: chatBot ? 1 :0 , delay: 200 });
+    const animation2 = useSpring({ opacity: chatBot ? 1 :0 , delay: 600 });
+    const animation3 = useSpring({ opacity: chatBot ? 1 :0 , delay: 1000 });
   const animation = useSpring({ to: {transform: chatBot ? `translateY(0%)` : `translateY(100%)`},  delay: 10 });
-  const animation1 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
-    const animation2 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
-    const animation3 = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
+  
     return (
         <div className="chatbot">
             {/* Handle Messages */}
             {chatBot ?  
                 <animated.div  style={animation} className="chat"> 
                     <div className="chat-header">
-                        <div className="close" onClick={closeChatbot}>&times;</div>
+                        <div className="close" onClick={closeChatbot}><img src={path}/></div>
                     </div>       
                     <div className="historyContainer" >
                         <div className="hello">
@@ -123,6 +128,7 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
             : ""}
             {bartender ?
             <div onClick={toggleBartender}>
+                <div className="circle"/>
                 <div className="bartender" >
                     <div className="logo-left"></div>
                     <button className="logo"  onClick={openChatBot} />
@@ -133,7 +139,9 @@ const Chat = ({ chat, botMessages, token, userMessage, botMessage, sendMessage})
                         :
                         <div className="go" >^</div>
                     } */}
+                    <div className="close-2"><img src={path2}/></div>
                     </div>
+                    
                 </div>
                 {/* <div> 
                     {toggle ? 

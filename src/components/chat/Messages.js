@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring'
 export default function Messages({dataMessages}) {
 
     
-    const animation = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 250 });
+    const animation = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 1050 });
 
 
     return (

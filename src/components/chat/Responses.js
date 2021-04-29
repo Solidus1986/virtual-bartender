@@ -45,7 +45,7 @@ const tabVideo = {
 
 export default function Responses({dataResponses, dataHandleSubmit}) {
 
-    const animation = useSpring({ to: {transform: `translateY(10px)`, opacity: 1 }, opacity: 1, from: {transform: `translateY(50px)`, opacity: 0 }, delay: 500 });
+    const animation = useSpring({ to: {transform: `translateY(10px)`, opacity: 1 }, opacity: 1, from: {transform: `translateY(50px)`, opacity: 0 }, delay: 1060 });
 
     return (
         <div className="chat-responses">
@@ -91,6 +91,9 @@ export default function Responses({dataResponses, dataHandleSubmit}) {
                                     return <div className="video"> <Player  src="https://www.hennessy.com/sites/hennessy/files/2020-04/the_hennessy_north_star_cocktail.mp4"  fluid={false} width={320} height={190}><BigPlayButton position="center" /></Player></div>;
                                 case 'URL_COCKTAIL:Cocktail Sazerac':
                                     return <div className="video"> <Player  src="https://www.hennessy.com/sites/hennessy/files/2021-03/hennessy-cocktails-tutorial-1440x770-24-sazerac.mp4"  fluid={false} width={320} height={190}><BigPlayButton position="center" /></Player></div>;
+                                case 'URL_COCKTAIL:Cocktail Aritochat-bot':
+                                    return <div className="video"> <Player  src="https://www.hennessy.com/sites/hennessy/files/2020-04/hennessy_aristocrat_cocktail.mp4"  fluid={false} width={320} height={190}><BigPlayButton position="center" /></Player></div>;
+                                    
                                default:
                                return <Response user={user}  dataHandleSubmit={dataHandleSubmit} />;
                             }
@@ -106,7 +109,7 @@ function Response({user, dataHandleSubmit}) {
     return (
         <input 
                                 className="bot-responses" 
-                                type="submit" 
+                                type="button" 
                                 key={user.id} 
                                 onClick={dataHandleSubmit} 
                                 value={user.content} 
