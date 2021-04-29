@@ -1,22 +1,21 @@
 {
   "files": {
     "main.css": "/virtual-bartender/static/css/main.adc269f5.chunk.css",
-    "main.js": "/virtual-bartender/static/js/main.3e05a42d.chunk.js",
-    "main.js.map": "/virtual-bartender/static/js/main.3e05a42d.chunk.js.map",
+    "main.js": "/virtual-bartender/static/js/main.e2d6c59d.chunk.js",
+    "main.js.map": "/virtual-bartender/static/js/main.e2d6c59d.chunk.js.map",
     "runtime-main.js": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js",
     "runtime-main.js.map": "/virtual-bartender/static/js/runtime-main.ce1c7f13.js.map",
     "static/css/2.d6cc4a3f.chunk.css": "/virtual-bartender/static/css/2.d6cc4a3f.chunk.css",
-    "static/js/2.21ce0b93.chunk.js": "/virtual-bartender/static/js/2.21ce0b93.chunk.js",
-    "static/js/2.21ce0b93.chunk.js.map": "/virtual-bartender/static/js/2.21ce0b93.chunk.js.map",
+    "static/js/2.0033ec9b.chunk.js": "/virtual-bartender/static/js/2.0033ec9b.chunk.js",
+    "static/js/2.0033ec9b.chunk.js.map": "/virtual-bartender/static/js/2.0033ec9b.chunk.js.map",
     "index.html": "/virtual-bartender/index.html",
     "static/css/2.d6cc4a3f.chunk.css.map": "/virtual-bartender/static/css/2.d6cc4a3f.chunk.css.map",
     "static/css/main.adc269f5.chunk.css.map": "/virtual-bartender/static/css/main.adc269f5.chunk.css.map",
-    "static/js/2.21ce0b93.chunk.js.LICENSE.txt": "/virtual-bartender/static/js/2.21ce0b93.chunk.js.LICENSE.txt",
+    "static/js/2.0033ec9b.chunk.js.LICENSE.txt": "/virtual-bartender/static/js/2.0033ec9b.chunk.js.LICENSE.txt",
     "static/media/App.css": "/virtual-bartender/static/media/fond-hennessy-2.d526a3c9.png",
     "static/media/Path.f4a65dc2.svg": "/virtual-bartender/static/media/Path.f4a65dc2.svg",
     "static/media/acide.7f718d8c.jpg": "/virtual-bartender/static/media/acide.7f718d8c.jpg",
     "static/media/fruity.e5f99a7d.jpg": "/virtual-bartender/static/media/fruity.e5f99a7d.jpg",
-    "static/media/iphone-x.9ab38d39.png": "/virtual-bartender/static/media/iphone-x.9ab38d39.png",
     "static/media/long.473a2d63.svg": "/virtual-bartender/static/media/long.473a2d63.svg",
     "static/media/path-2.9a0d939d.svg": "/virtual-bartender/static/media/path-2.9a0d939d.svg",
     "static/media/short.9bdb22ec.svg": "/virtual-bartender/static/media/short.9bdb22ec.svg",
@@ -25,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.ce1c7f13.js",
     "static/css/2.d6cc4a3f.chunk.css",
-    "static/js/2.21ce0b93.chunk.js",
+    "static/js/2.0033ec9b.chunk.js",
     "static/css/main.adc269f5.chunk.css",
-    "static/js/main.3e05a42d.chunk.js"
+    "static/js/main.e2d6c59d.chunk.js"
   ]
 }
