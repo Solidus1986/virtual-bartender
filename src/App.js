@@ -2,7 +2,7 @@
 import {useEffect} from 'react'
 import './App.css';
 import axios from 'axios';
-import iphone from "./assets/img/iphone-x.png"
+
 
 // Import redux component
 import { Provider } from 'react-redux';
@@ -15,12 +15,12 @@ import Chat from './components/chat/Chat';
 import { createSession } from './actions/kwalys'
 
 
-if (localStorage.session) {
-  delete axios.defaults.headers.common.session;
-  axios.defaults.headers.common.session = localStorage.session;
-} else {
-  delete axios.defaults.headers.common.session;
-}
+  if (localStorage.session) {
+    delete axios.defaults.headers.common.session;
+    axios.defaults.headers.common.session = localStorage.session;
+  } else {
+    delete axios.defaults.headers.common.session;
+  }
 
 
 // Connect application to redux

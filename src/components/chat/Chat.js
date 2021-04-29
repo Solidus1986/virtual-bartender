@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring';
 
 
 //  Import action
-import { userMessage, botMessage, sendMessage } from '../../actions/kwalys';
+import { botMessage, sendMessage } from '../../actions/kwalys';
 import Messages from "./Messages";
 import Responses from "./Responses";
 
@@ -76,7 +76,7 @@ const Chat = ({ botMessages, token, botMessage, sendMessage}) => {
             {chatBot ?  
                 <animated.div  style={animation} className="chat"> 
                     <div className="chat-header">
-                        <div className="close" onClick={closeChatbot}><img src={path}/></div>
+                        <div className="close" onClick={closeChatbot}><img src={path} alt="close" /></div>
                     </div>       
                     <div className="historyContainer" >
                         <div className="hello">
@@ -85,12 +85,12 @@ const Chat = ({ botMessages, token, botMessage, sendMessage}) => {
                         <animated.p style={animation3}>virtual bartender.</animated.p>
                         </div>   
                         <div className="chatBotUser" >     
-                            {botMessages.map((mess) => ( 
-                                <>
+                            {botMessages.map((mess, index) => ( 
+                                <div key={index}>
                                     <Messages dataMessages={mess.message.messages} />
                                     <Responses dataResponses={mess.message.responses} dataHandleSubmit={handleSubmit}/>
                                     <div className="scrollbar" ref={endOfMessages} ></div>
-                                </> 
+                                </div> 
                             ))}
                         </div>
                     </div>
@@ -104,7 +104,7 @@ const Chat = ({ botMessages, token, botMessage, sendMessage}) => {
                             <div>
                                 <p className="bartender-title">VIRTUAL BARTENDER</p>
                             <div className="close-2">
-                                <img src={path2}/>
+                                <img src={path2} alt="close"/>
                             </div>
                         </div>  
                     </div>
@@ -122,6 +122,6 @@ const mapStateToProps = (state) => ({
     token: localStorage.session
   });
   
-  export default connect(mapStateToProps, { userMessage, botMessage, sendMessage })(Chat);
+  export default connect(mapStateToProps, { botMessage, sendMessage })(Chat);
   
 

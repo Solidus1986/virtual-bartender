@@ -14,13 +14,13 @@ import {
   import axios from "axios";
   
   //  Function that handles  users response
-  export const userMessage = (selectResponse) => async (dispatch) => {
-    try {
-      dispatch({ type: RESPONSE_USER_SUCCESS, payload: selectResponse}, console.log(selectResponse, '??'));
-    } catch (err) {
-      dispatch({ type: RESPONSE_USER_FAIL });
-    }
-  };
+  // export const userMessage = (selectResponse) => async (dispatch) => {
+  //   try {
+  //     dispatch({ type: RESPONSE_USER_SUCCESS, payload: selectResponse});
+  //   } catch (err) {
+  //     dispatch({ type: RESPONSE_USER_FAIL });
+  //   }
+  // };
 
 
   //  Creates a session - API CALL

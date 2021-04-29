@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useSpring, animated } from 'react-spring'
 
 export default function Messages({dataMessages}) {
@@ -9,10 +9,10 @@ export default function Messages({dataMessages}) {
     // return messages of bot
     return (
         <div className="chat-messages">
-            {dataMessages.map((bot)=> (
-                <animated.div className="mess" type={bot.type} style={animation} >
+            {dataMessages.map((bot,index)=> (
+                <animated.div key={index} className="mess" type={bot.type} style={animation} >
                     {bot.type ==="media" ? 
-                        <img className="media" src={bot.content}/>
+                        <img className="media" src={bot.content} alt={bot.type} />
                         : <div>{bot.content.replace(/<(?:.|\n)*?>/gm, ' ')}</div>
                     }
                 </animated.div>   

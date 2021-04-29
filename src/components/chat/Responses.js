@@ -21,8 +21,8 @@ export default function Responses({dataResponses, dataHandleSubmit}) {
     // return with switch for type response
     return (
         <div className="chat-responses">
-            {dataResponses.map((user)=>(
-                <animated.div style={animation}>
+            {dataResponses.map((user, index)=>(
+                <animated.div key={index} style={animation}>
                     {(() => {
                         switch(user.content) {
                             case 'Short':
